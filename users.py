@@ -19,7 +19,7 @@ async def user(id:int):
 async def user(user: User):
     if type(search_user(user.id)) == User:
         return {"Error": "User found"}
-        
+
     users_list.append(user)
     return user
 
@@ -41,9 +41,9 @@ async def user(id: int):
     found = False
     
     for index,item in enumerate(users_list):
-        if(item.id == user.id):
+        if(item.id == id):
             del users_list[index]
-            found = False
+            found = True
 
     if not found:
         return {"Error": "Usuario no Eliminado"} 
